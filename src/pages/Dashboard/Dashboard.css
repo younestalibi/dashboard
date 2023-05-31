@@ -1,0 +1,30 @@
+.desc {
+    font: 14px;
+    font-family: Roboto !important;
+    color: var(--color-828599);
+}
+.sub-title {
+    font: 24px;
+    font-family: Roboto !important;
+    color: var(--color-212529);
+}
+  
+.red {
+    color: var(--color-3d464d);
+    font-size: 14px;
+    font-family: Roboto !important;
+}
+
+.green {
+    color: var(--color-47ad24);
+    font-size: 14px;
+    font-family: Roboto !important;
+}
+  
+.dashboard-title-secions{
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+}

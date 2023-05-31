@@ -1,0 +1,22 @@
+.path-navigation {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    color: #686868 !important;
+    font-weight: bold;
+    opacity: 0.8;
+  }
+  
+  .path-segment {
+    color: #333; 
+  }
+  
+  .path-separator {
+    margin: 0 5px;
+    color: #666; 
+  }
+  
+  .path-current-page {
+    color: rgb(0, 47, 255);
+  }
+  
