@@ -6,10 +6,11 @@ const getTokenFromLocalStorage = localStorage.getItem("user")
 const axiosHttp = axios.create({
   baseURL: `http://localhost:8000/api`,
   headers: {
-    'Accept': "application/json",
+    // 'Content-Type': 'application/json',
     'Authorization': `Bearer ${
         getTokenFromLocalStorage !== null ? getTokenFromLocalStorage : ""
       }`,
+      // 'Accept': "application/json",      
   },
 });
 

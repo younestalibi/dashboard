@@ -6,7 +6,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { deleteCategory, getCategories, resetState } from '../../../Provider/Features/Category/categorySlice';
+import { deleteCategory, getCategories, resetStateCategory } from '../../../Provider/Features/Category/categorySlice';
 import CustomAlert from '../../../components/CustomAlert/CustomAlert';
 
 
@@ -32,7 +32,7 @@ const CategoriesList = () => {
 
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(resetState());
+        dispatch(resetStateCategory());
         dispatch(getCategories());
     }, []);
     const {isSuccess,isError,isLoading,Categories,deletedCategory}= useSelector((state) => state.Category);
@@ -66,7 +66,7 @@ const CategoriesList = () => {
     }
     const deleteRecord = (e) => {
         dispatch(deleteCategory(e));
-        dispatch(resetState())
+        dispatch(resetStateCategory())
         setOpen(false);
         setTimeout(() => {
         dispatch(getCategories());

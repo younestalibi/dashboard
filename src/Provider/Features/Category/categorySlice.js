@@ -51,7 +51,7 @@ export const getSingleCategory = createAsyncThunk(
     }
   }
 );
-export const resetState = createAction("RevertAll");
+export const resetStateCategory = createAction("RevertAll");
 
 const initialState = {
   Categories: [],
@@ -151,7 +151,7 @@ export const CategorySlice = createSlice({
         state.message = action.error;
       })
     //   ---getSingleCategory---
-      .addCase(resetState, () => initialState);
+      .addCase(resetStateCategory, () => initialState);
   },
 });
 export default CategorySlice.reducer;

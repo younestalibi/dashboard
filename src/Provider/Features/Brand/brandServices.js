@@ -2,25 +2,23 @@
 // import { config } from "../../utils/axiosHttpconfig";
 
 import axiosHttp from "../../../utils/axios-client";
+import { config } from "../../../utils/config";
 
 // import { base_url } from "../../utils/baseUrl";
 const getBrands = async () => {
   const response = await axiosHttp.get(`/brands`);
-    console.log(response.data)
   return response.data;
 };
 const createBrand = async (brand) => {
-  const response = await axiosHttp.post(`/brand`, brand,);
+  console.log(brand)
+  const response = await axiosHttp.post(`/brand`, brand,config);
     console.log(response.data)
   return response.data;
 };
 const updateBrand = async (brand) => {
-  const response = await axiosHttp.put(
-    `${base_url}brand/${brand.id}`,
-    { title: brand.brandData.title },
-    config
-  );
-
+  console.log(brand.get('name'))
+  const response = await axiosHttp.post(`/brands/${brand.get('id')}`,brand,config);
+console.log(response)
   return response.data;
 };
 const getSingleBrand = async (id) => {

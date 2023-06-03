@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authSlice from "../Features/Auth/authSlice";
 // import customerReducer from "../features/cutomers/customerSlice";
-// import productReducer from "../features/product/productSlice";
+import productSlice from "../Features/Product/productSlice";
 import brandSlice from "../Features/Brand/brandSlice";
 import categorySlice from "../Features/Category/categorySlice";
 // import bCategoryReducer from "../features/bcategory/bcategorySlice";
@@ -15,7 +15,7 @@ export const store = configureStore({
     // auth: authReducer,
     auth: authSlice,
     // customer: customerReducer,
-    // product: productReducer,
+    product: productSlice,
     brand: brandSlice,
     Category: categorySlice,
     // bCategory: bCategoryReducer,

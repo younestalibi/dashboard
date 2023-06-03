@@ -24,6 +24,7 @@ const deleteCategory = async (id) => {
   return response.data;
 };
 const updateCategory = async (category) => {
+  console.log(category.get('name'))
   const response = await axiosHttp.put(`/update-category/${category.get('id')}`,category);
 console.log(response)
   return response.data;

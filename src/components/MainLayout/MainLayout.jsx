@@ -79,7 +79,7 @@ const MainLayout = () => {
               label: "Catalog",
               children: [
                 {
-                  key: "add-product",
+                  key: "form-product",
                   icon: <AiOutlineShoppingCart className="fs-4" />,
                   label: "Add Product",
                 },
@@ -89,19 +89,19 @@ const MainLayout = () => {
                   label: "Products List",
                 },
                 {
-                  key: "add-brand",
+                  key: "form-brand",
                   icon: <SiBrandfolder className="fs-4" />,
                   label: "Add Brand",
                 },
                 {
                   key: "list-brands",
                   icon: <SiBrandfolder className="fs-4" />,
-                  label: "Brand List ",
+                  label: "Brands List ",
                 },
                 {
                   key: "form-category",
                   icon: <BiCategoryAlt className="fs-4" />,
-                  label: "Category",
+                  label: "Add Category",
                 },
                 {
                   key: "list-categories",

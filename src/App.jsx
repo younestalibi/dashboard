@@ -11,7 +11,7 @@ import Customers from './pages/Customers/Customers';
 import ProductsList from './pages/Product/ProductsList/ProductsList';
 import Addbrand from './pages/Brand/Addbrand/Formbrand';
 import BrandsList from './pages/Brand/BrandsList/BrandsList';
-import AddProduct from './pages/Product/AddProduct/AddProduct';
+import AddProduct from './pages/Product/AddProduct/FromProduct';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from 'react';
 import axiosHttp from './utils/axios-client';
@@ -69,7 +69,7 @@ function App() {
             <Route path="form-brand/:id?" element={<Formbrand />} />
             {/* <Route path="brand/:id" element={<Addbrand />} /> */}
             <Route path="list-products" element={<ProductsList />} />
-            <Route path="add-product" element={<AddProduct/>} />
+            <Route path="form-product/:id?" element={<AddProduct/>} />
           </Route>
         </Routes>
       </Router>

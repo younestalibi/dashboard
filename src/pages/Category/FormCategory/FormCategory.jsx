@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { createCategory, getSingleCategory, resetState, updateCategory } from '../../../Provider/Features/Category/categorySlice';
+import { createCategory, getSingleCategory, resetStateCategory, updateCategory } from '../../../Provider/Features/Category/categorySlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from 'react-router-dom';
@@ -27,7 +27,7 @@ function FormCategory() {
       if (isEdite) {
         dispatch(getSingleCategory(id))
       } else {
-        dispatch(resetState());
+        dispatch(resetStateCategory());
       }
     }, [id]);
     const navigate=useNavigate()
@@ -63,7 +63,7 @@ function FormCategory() {
         }else{
           dispatch(createCategory(formData))
         }
-        dispatch(resetState())
+        dispatch(resetStateCategory())
         setCategory('')
     };
 

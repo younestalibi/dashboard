@@ -6,12 +6,12 @@ import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { deleteBrand, getBrands, resetState } from '../../../Provider/Features/Brand/brandSlice';
+import { deleteBrand, getBrands, resetStateBrand } from '../../../Provider/Features/Brand/brandSlice';
 import CustomAlert from '../../../components/CustomAlert/CustomAlert';
 // import {
 //   deleteABrand,
 //   getBrands,
-//   resetState,
+//   resetStateBrand,
 // } from "../features/brand/brandSlice";
 // import CustomModal from "../components/CustomModal";
 
@@ -24,6 +24,10 @@ const columns = [
     title: "Name",
     dataIndex: "name",
     sorter: (a, b) => a.name.length - b.name.length,
+  },
+  {
+    title:'Image',
+    dataIndex:'image',
   },
   {
     title: "Action",
@@ -41,7 +45,7 @@ const BrandsList = () => {
   };
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(resetState());
+    dispatch(resetStateBrand());
     dispatch(getBrands());
   }, []);
   const {brands,isSuccess,isError,isLoading,createdBrand,deletedBrand,brandName,updatedBrand} = useSelector((state) => state.brand);
@@ -59,6 +63,7 @@ const BrandsList = () => {
     data1.push({
       key: i + 1,
       name: brands[i].name,
+      image: <img style={{width:'60px',height:'60px',objectFit:"cover"}} src={`${import.meta.env.VITE_SERVER_URL}/storage/${brands[i].image}`}/>,
       action: (
         <>
           <Link to={`/admin/form-brand/${ brands[i].id}`} className=" fs-3 text-danger">
@@ -85,7 +90,7 @@ const BrandsList = () => {
   const deleteRecord = (e) => {
     console.log('delete record')
     dispatch(deleteBrand(deleteId))
-    dispatch(resetState())
+    dispatch(resetStateBrand())
     setOpen(false);
     setTimeout(() => {
     dispatch(getBrands());
