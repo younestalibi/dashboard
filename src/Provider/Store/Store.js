@@ -4,6 +4,7 @@ import authSlice from "../Features/Auth/authSlice";
 import productSlice from "../Features/Product/productSlice";
 import brandSlice from "../Features/Brand/brandSlice";
 import categorySlice from "../Features/Category/categorySlice";
+import orderSlice from "../Features/Order/orderSlice";
 // import bCategoryReducer from "../features/bcategory/bcategorySlice";
 // import blogReducer from "../features/blogs/blogSlice";
 // import colorReducer from "../features/color/colorSlice";
@@ -12,7 +13,7 @@ import categorySlice from "../Features/Category/categorySlice";
 // import couponReducer from "../features/coupon/couponSlice";
 export const store = configureStore({
   reducer: {
-    // auth: authReducer,
+    order: orderSlice,
     auth: authSlice,
     // customer: customerReducer,
     product: productSlice,
